@@ -41,8 +41,7 @@ from kafka.errors import (
     TopicAlreadyExistsError as TopicExistsError,
     for_code,
 )
-from kafka.partitioner.default import DefaultPartitioner
-from kafka.partitioner.hashed import murmur2
+from kafka.partitioner.default import DefaultPartitioner, murmur2
 from kafka.protocol.metadata import MetadataRequest_v1
 from mode import Service, get_logger
 from mode.utils.futures import StampedeWrapper
