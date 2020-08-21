@@ -28,6 +28,12 @@ class test_SASLCredentials:
                             mechanism=SASLMechanism.GSSAPI),
             {'mechanism': SASLMechanism.GSSAPI}),
         pytest.param(
+            'SCRAM-SHA-512',
+            SASLCredentials(username='george',
+                            password='pw1',
+                            mechanism=SASLMechanism.SCRAM_SHA_512),
+            {'mechanism': SASLMechanism.SCRAM_SHA_512}),
+        pytest.param(
             'ssl context gives SASL_SSL',
             SASLCredentials(username='george',
                             password='pw1',
