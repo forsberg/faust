@@ -66,7 +66,8 @@ class test_HoppingWindow:
         step = 60
         window = HoppingWindow(size, step)
 
-        # There's nothing special about this timestamp, it was simply when the test was created
+        # There's nothing special about this timestamp,
+        # it was simply when the test was created
         timestamp = 1603122451.544989
         window_ranges = window.ranges(timestamp)
 
