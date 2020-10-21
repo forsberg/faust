@@ -159,6 +159,11 @@ after_success:
       .tox/$TOXENV/bin/coverage xml
       .tox/$TOXENV/bin/codecov -e IDENT
   fi;
+  for logfile in .tox/$TOXENV/log/* ; do 
+      echo "-- start $logfile --""
+      cat $logfile
+      echo "-- end $logfile --"
+  done
 script: tox -v -- -v
 #notifications:
 #  slack:
