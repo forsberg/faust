@@ -21,3 +21,4 @@ class test_Cython:
         from faust._cython.windows import HoppingWindow
         hopping = HoppingWindow(60, 60)
         # No assert, just check that we could import and init
+        # without exception
