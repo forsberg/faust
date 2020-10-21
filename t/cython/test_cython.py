@@ -18,6 +18,10 @@ class test_Cython:
         assert USE_CYTHON == True
 
     def test_import(self):
+        import faust
+        print(f"faust is {faust}")
+        import faust._cython
+        print(f"faust._cython is {faust._cython}")
         from faust._cython.windows import HoppingWindow
         hopping = HoppingWindow(60, 60)
         # No assert, just check that we could import and init
