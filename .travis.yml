@@ -159,12 +159,14 @@ after_success:
       .tox/$TOXENV/bin/coverage xml
       .tox/$TOXENV/bin/codecov -e IDENT
   fi;
+script: tox -v -- -v
+after_script:
+- |
   for logfile in .tox/$TOXENV/log/* ; do 
       echo "-- start $logfile --""
       cat $logfile
       echo "-- end $logfile --"
   done
-script: tox -v -- -v
 #notifications:
 #  slack:
 #    secure: rEeKSgjI9TLh1HCFHvM2sTNquvlFj4AhyZqObUn/Rt5mYZpUb0G9HyQZDksm+8sumWt44WDrGIxRiFh1RQW3Onww1+/DBIqORKEZNv63njC4lMjNvk97l5iVHFXqPiVcaIRS3TXgVpNkbc+Diwc0DGgDVu5X2dhe9ClRlV259F2ymt9XkaPIV7qTacbGhH1aX/2suvA023AkXCo2FX2rRNp4yReoHgLdLc7rYz5cc9IruE4QP2AzaD2pnYmX8Fs9UmXPPEh0DxTQ8/FLCg9H2OJBBE/REATjx3QHZMGKiDbDgCPu2MY6gCR/El+eu+eOl2fJ1j2Z/4iOz4vnKHMm4Qamln1WgfGWRp0w30lVvri8pYVn6lSkHC2sIJ4wg26csDCF2WHLusd9bnmYHB/IyY4oFy/wBptvZd5qRkivgsNeD/eOwuVAjryN2qx0kRE6iKACsch3+NAEb1d5kNwebLQ78ETkmwpQOpBwHOngtYo1xbi93VE1DaWJjMO5tStE7dDAou7RQwaApe+H9f6PBu5tuVQgQvhLhlg9laFia+z7lkyb7kwnJ5QG3OimVM9I2fxVtxMPYgnZ/XbPR++9LcwyMRJh9pmYuVzyyHxQZTT8AgHjrPpoRc9meKgWYUhh4AAG/4egviJd0i/DCtV9pOSyOzsXJp2a5B08vA9uueg=
