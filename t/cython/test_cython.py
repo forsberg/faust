@@ -18,6 +18,8 @@ class test_Cython:
         assert USE_CYTHON == True
 
     def test_import(self):
+        import sys
+        print(f"sys.path: {sys.path}")
         import faust
         print(f"faust is {faust}")
         import faust._cython
