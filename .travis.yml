@@ -162,7 +162,7 @@ after_success:
 script: tox -v -- -v
 after_script:
 - |
-  for logfile in .tox/$TOXENV/log/* ; do 
+  for logfile in /home/travis/build/forsberg/faust/.tox/$TOXENV/log/* ; do 
       echo "-- start $logfile --""
       cat $logfile
       echo "-- end $logfile --"
